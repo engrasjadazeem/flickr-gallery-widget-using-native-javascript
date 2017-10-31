@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Flickr</title>
+	<meta charset="utf-8" />
+    <!--CSS Styles-->
+    <link href="../assets/css/style.css" rel="stylesheet" />    
+    <script src="https://use.fontawesome.com/49e95ca602.js"></script>
+
+    <!--JScript-->
+    <script src="../assets/script/flickrWidget.js"></script>
+</head>
+<body> 
+    <div id="ErrorBrowser"></div>
+    <div id="flickrWidget" data-nbr-image="50" data-topic="football,ball">
+    </div>      
+    <script>
+        //Run when DOM contents are loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Hello, World!');
+            invokeFlickrWidget("flickrWidget",
+                                {
+                                    width: "450px",
+                                    height: "600px",
+                                    backgroundColour: "#cccccc",
+                                    enableScroll: true,
+                                    thumbnailSize: "140px"
+                                });
+            //invokeFlickrWidget("flickrWidget2");            
+        });
+    </script>
+</body>
+</html>
