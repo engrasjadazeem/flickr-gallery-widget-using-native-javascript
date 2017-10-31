@@ -44,6 +44,16 @@ function invokeFlickrWidget(divId, options) {
                         document.getElementById(divId).innerHTML += imageBox;
                     }
                 });
+
+                //Thumbnail size
+                if (options.thumbnailSize !== undefined) {
+                    var images = document.getElementById(divId).querySelectorAll(".thumbnail");
+                    for (var i = 0; i < images.length; i++) {
+                        images[i].style.width = options.thumbnailSize;
+                        images[i].style.height = options.thumbnailSize;
+                    }
+                }
+
             } else {
                 //Error flag
                 console.error(request.statusText);
@@ -71,11 +81,12 @@ function applyConfiguration(divId, options) {
     if (options.backgroundColor !== undefined)
         document.getElementById(divId).style.backgroundColor = options.backgroundColour;
     
-        if (options.enableScroll !== undefined && options.enableScroll) {
+    if (options.enableScroll !== undefined && options.enableScroll) {
         document.getElementById(divId).style.overflowY = "scroll";
-    } else {
-        document.getElementById(divId).style.overflowY = "hidden";
     }
+    else {
+        document.getElementById(divId).style.overflowY = "hidden";
+    }   
 }
 
 //Delete Image handler
