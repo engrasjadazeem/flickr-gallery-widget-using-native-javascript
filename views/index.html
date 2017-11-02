@@ -13,6 +13,7 @@
 <body> 
     <div id="ErrorBrowser"></div>
     <div id="flickrWidget" data-nbr-image="9" data-topic="football,ball" onscroll="WidgetScrolled(this.id)"></div>
+    <div id="flickrWidget2" data-nbr-image="9" data-topic="flowers" onscroll="WidgetScrolled(this.id)"></div>
     <script>
         //Run when DOM contents are loaded
         document.addEventListener('DOMContentLoaded', function () {
@@ -20,10 +21,19 @@
             invokeFlickrWidget("flickrWidget",
                                 {
                                     width: "450px",
-                                    height: "600px",
+                                    height: "200px",
                                     backgroundColour: "#cccccc",
                                     enableScroll: true,
-                                    thumbnailSize: "50px"
+                                    thumbnailSize: "200px"
+                                });
+
+            invokeFlickrWidget("flickrWidget2",
+                                {
+                                    width: "450px",
+                                    height: "200px",
+                                    backgroundColour: "#000000",
+                                    enableScroll: true,
+                                    thumbnailSize: "100px"
                                 });
             //invokeFlickrWidget("flickrWidget2");            
         });
